@@ -87,8 +87,18 @@ const CardForm = () => {
       type: "card",
       card: elements.getElement(CardElement),
     });
-    console.log("[PaymentMethod]", payload);
+    if (payload.error) {
+      console.error(payload);
+    } else {
+      // Send off?
+      console.log("[PaymentMethod]", payload);
+    }
   };
+  // TODO: How to show/send money?
+  // TODO: How to show/send name + business name + email
+  // TODO: How to show success without redirecting?
+  // TODO: Show errors
+  // TODO: Download "license number + info"
   return (
     <form onSubmit={handleSubmit}>
       <Label>
@@ -96,16 +106,16 @@ const CardForm = () => {
         <CardElement
           options={options}
           onReady={() => {
-            console.log("CardElement [ready]");
+            // console.log("CardElement [ready]");
           }}
           onChange={(event) => {
-            console.log("CardElement [change]", event);
+            // console.log("CardElement [change]", event);
           }}
           onBlur={() => {
-            console.log("CardElement [blur]");
+            // console.log("CardElement [blur]");
           }}
           onFocus={() => {
-            console.log("CardElement [focus]");
+            // console.log("CardElement [focus]");
           }}
         />
       </Label>
