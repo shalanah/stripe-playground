@@ -9,11 +9,9 @@ const stripePromise = loadStripe("pk_test_6pRNASCoBOKtIshFeQd4XMUh");
 
 const App = () => {
   return (
-    <div style={{ margin: "auto" }}>
-      <Elements stripe={stripePromise}>
-        <CardForm />
-      </Elements>
-    </div>
+    <Elements stripe={stripePromise}>
+      <CardForm />
+    </Elements>
   );
 };
 
