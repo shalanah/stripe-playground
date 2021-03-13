@@ -4,9 +4,6 @@ import styled from "styled-components";
 
 const Button = styled.button`
   white-space: nowrap;
-  border: 0;
-  outline: 0;
-  display: inline-block;
   height: 40px;
   line-height: 40px;
   padding: 0 14px;
@@ -18,22 +15,23 @@ const Button = styled.button`
   text-transform: uppercase;
   letter-spacing: 0.025em;
   background-color: #6772e5;
-  text-decoration: none;
   transition: all 150ms ease;
   margin-top: 10px;
+  transform: translateZ(0);
   &:hover {
     color: #fff;
-    cursor: pointer;
     background-color: #7795f8;
-    transform: translateY(-1px);
+    transform: translateY(-1px) translateZ(0);
     box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
   }
 `;
 
 const Label = styled.label`
+  color: #6b7c93;
+  font-weight: 300;
+  letter-spacing: 0.025em;
   input,
   .StripeElement {
-    border: 1px solid green;
     display: block;
     margin: 10px 0 20px 0;
     width: min(500px, calc(100vw - 20px));
@@ -42,8 +40,6 @@ const Label = styled.label`
     font-family: "Source Code Pro", monospace;
     box-shadow: rgba(9, 9, 12, 0.149) 0px 1px 3px,
       rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
-    border: 0;
-    outline: 0;
     border-radius: 4px;
     background: white;
     line-height: 1.2;
@@ -95,9 +91,7 @@ const CardForm = () => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <Label
-        style={{ color: "#6b7c93", fontWeight: 300, letterSpacing: "0.025em" }}
-      >
+      <Label>
         Card details
         <CardElement
           options={options}

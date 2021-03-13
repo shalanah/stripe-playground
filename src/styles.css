@@ -16,3 +16,12 @@ body {
 #root {
   display: flex;
 }
+
+input,
+button {
+  border: 0;
+  outline: 0;
+}
+button {
+  cursor: pointer;
+}
